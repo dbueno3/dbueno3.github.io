@@ -2,37 +2,37 @@
 body, html{
     height: 100%;
     scroll-behavior: smooth;
-
-}
-
-h2 {
+    
+  }
+  
+  h2 {
     letter-spacing: 8px;
-}
-
-img {
+  }
+  
+  img {
     max-width: 100%;
     font-size: 50px;
-}
-
-.section-content {
+  }
+  
+  .section-content {
     padding: 80px 0;
-}
-
-/* navbar hover animation*/
-.nav a {
+  }
+  
+  /* navbar hover animation*/
+  .nav a {
     background-image: linear-gradient(white, white);
     background-size: 0 5px, auto;
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all .2s ease-out;
-}
-
-.nav a:hover{
+  }
+  
+  .nav a:hover{
     background-size: 100% 5px, auto;
-}
-
-/* cover */
-#cover {
+  }
+  
+  /* cover */
+  #cover {
     background: url(./canada.jpeg) center center no-repeat;
     background-position: fixed;
     background-size: cover;
@@ -43,104 +43,104 @@ img {
     position: relative;
     background-attachment: fixed;
     text-align: center;
-
-}
-
-#cover a{
+  
+  }
+  
+  #cover a{
     color: white;
-}
-
-#cover-caption{
+  }
+  
+  #cover-caption{
     width: 100%;
-}
-
-#cover a{
+  }
+  
+  #cover a{
     background-image: linear-gradient(beige, beige);
     background-size: 0 5px, auto;
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all .2s ease-out;
-}
-
-#cover a:hover{
+  }
+  
+  #cover a:hover{
     background-size: 100% 5px, auto;
-}
-
-.section-content{
+  }
+  
+  .section-content{
     padding: 5rem 0;
-}
-
-#about {
+  }
+  
+  #about {
     background: bottom center no-repeat;
     background-size: cover;
-}
-
-#about .about-text{
+  }
+  
+  #about .about-text{
     background: rgba(169, 142, 9, 0);
     color: beige;
-    padding: 1.8575rem;
-}
-
-#about h3{
+    padding: 1.8575rem; 
+  }
+  
+  #about h3{
     padding: 1rem;
-}
-/* skills */
-#experience {
+  }
+  /* skills */
+  #experience {
     padding: 40px;
     color: beige;
     background: url(./img/content_bg.jpg) center center no-repeat;
-
-
-}
-
-#experience h2{
+    
+    
+  }
+  
+  #experience h2{
     letter-spacing: 5px;
-}
-
-/* projects */
-
-#projects .card-deck{
+  }
+  
+  /* projects */
+  
+  #projects .card-deck{
     padding:40px;
-;
-
-}
-
-#projects h2{
+    ;
+    
+  }
+  
+  #projects h2{
     letter-spacing: 5px;
     color: white;
-}
-
-#projects a {
+  }
+  
+  #projects a {
     background-image: linear-gradient(white, white);
     background-size: 0 5px, auto;
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all .2s ease-out;
-}
-
-#projects a:hover{
+  }
+  
+  #projects a:hover{
     background-size: 100% 5px, auto;
-}
-
-#projects button {
+  }
+  
+  #projects button {
     background-image: linear-gradient(white, white);
     background-size: 0 5px, auto;
     background-repeat: no-repeat;
     background-position: center bottom;
     transition: all .2s ease-out;
-}
-
-#projects button:hover{
+  }
+  
+  #projects button:hover{
     background-size: 100% 5px, auto;
-}
-
-/* footer */
-#footer-main {
+  }
+  
+  /* footer */
+  #footer-main {
     color: white;
     font-size: 0.8rem;
     padding: 2.5rem 0;
-}
-
-#footer-main a{
+  }
+  
+  #footer-main a{
     color: white;
-}
+  }
