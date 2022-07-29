@@ -33,7 +33,8 @@ img {
 
 /* cover */
 #cover {
-    background: url(./canada.jpeg) center center no-repeat;
+    background: url('/img/canada.jpeg') center center no-repeat;
+    
     background-position: fixed;
     background-size: cover;
     opacity: 0.8;
