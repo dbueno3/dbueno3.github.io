@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Gear from './pages/Gear';
+import Contact from './pages/Contact';
+import './styles/global.scss';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [page, setPage] = useState('Home');
+  const [fadeKey, setFadeKey] = useState(0);
+
+  const navigate = (p) => {
+    setPage(p);
+    setFadeKey((k) => k + 1);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const renderPage = () => {
+    switch (page) {
+      case 'Home':    return <Home key={fadeKey} />;
+      case 'About':   return <About key={fadeKey} />;
+      case 'Gear':    return <Gear key={fadeKey} />;
+      case 'Contact': return <Contact key={fadeKey} />;
+      default:        return <Home key={fadeKey} />;
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app">
+      {/* Ambient background glows */}
+      <div className="ambient-glow ambient-glow--top" />
+      <div className="ambient-glow ambient-glow--bottom" />
 
-export default App
+      <Navbar currentPage={page} onNavigate={navigate} />
+
+      <main className="main-content">
+        {renderPage()}
+      </main>
+
+      <Footer />
+    </div>
+  );
+}

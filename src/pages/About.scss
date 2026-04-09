@@ -1,0 +1,210 @@
+@use '../styles/variables' as *;
+
+.about {
+&__header {
+    @include page-enter;
+    animation-delay: 100ms;
+}
+
+// ─── Photo Collage ───
+&__collage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 48px;
+    height: 200px;
+
+    @media (max-width: $mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    height: 280px;
+    }
+}
+
+&__collage-item {
+    border-radius: 12px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: $text-muted;
+    transition: transform 0.3s ease;
+
+    &:hover {
+    transform: scale(1.03);
+    }
+
+    &--1 {
+    background: linear-gradient(135deg, rgba($primary, 0.08), rgba($primary, 0.18));
+    border-color: rgba($primary, 0.12);
+    transform: rotate(-3deg);
+    &:hover { transform: rotate(-3deg) scale(1.03); }
+    }
+    &--2 {
+    background: linear-gradient(135deg, rgba($secondary, 0.08), rgba($secondary, 0.18));
+    border-color: rgba($secondary, 0.12);
+    transform: rotate(2deg);
+    &:hover { transform: rotate(2deg) scale(1.03); }
+    }
+    &--3 {
+    background: linear-gradient(135deg, rgba($tertiary, 0.08), rgba($tertiary, 0.18));
+    border-color: rgba($tertiary, 0.12);
+    transform: rotate(-1deg);
+    &:hover { transform: rotate(-1deg) scale(1.03); }
+    }
+    &--4 {
+    background: linear-gradient(135deg, rgba($primary-light, 0.08), rgba($primary-light, 0.18));
+    border-color: rgba($primary-light, 0.12);
+    transform: rotate(3deg);
+    &:hover { transform: rotate(3deg) scale(1.03); }
+    }
+}
+
+// ─── Timeline ───
+&__timeline {
+    @include page-enter;
+    animation-delay: 220ms;
+}
+
+&__timeline-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+&__timeline-list {
+    position: relative;
+    padding-left: 28px;
+}
+
+&__timeline-line {
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, rgba($primary, 0.25), rgba($tertiary, 0.25));
+}
+
+&__timeline-item {
+    margin-bottom: 32px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &:last-child {
+    margin-bottom: 0;
+    }
+}
+
+&__timeline-dot {
+    position: absolute;
+    left: -24px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+
+    &--primary      { background: $primary;       box-shadow: 0 0 12px rgba($primary, 0.25); }
+    &--secondary    { background: $secondary;     box-shadow: 0 0 12px rgba($secondary, 0.25); }
+    &--tertiary     { background: $tertiary;      box-shadow: 0 0 12px rgba($tertiary, 0.25); }
+    &--primary-light { background: $primary-light; box-shadow: 0 0 12px rgba($primary-light, 0.25); }
+}
+
+&__timeline-company {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+&__timeline-role {
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 2px;
+
+    &--primary       { color: $primary; }
+    &--secondary     { color: $secondary; }
+    &--tertiary      { color: $tertiary; }
+    &--primary-light { color: $primary-light; }
+}
+
+&__timeline-desc {
+    font-size: 14px;
+    color: $text-muted;
+    margin-top: 6px;
+    line-height: 1.6;
+}
+
+&__timeline-period {
+    font-size: 14px;
+    color: $text-muted;
+    white-space: nowrap;
+    margin-left: 24px;
+}
+
+// ─── Projects ───
+&__projects {
+    @include page-enter;
+    animation-delay: 340ms;
+    margin-top: 48px;
+}
+
+&__projects-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+&__projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+&__project {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+
+    @media (max-width: $mobile) {
+    flex-direction: column;
+    }
+}
+
+&__project-info {
+    flex: 1;
+}
+
+&__project-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+&__project-desc {
+    font-size: 14px;
+    color: $text-muted;
+    line-height: 1.6;
+}
+
+&__project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-width: 200px;
+    justify-content: flex-end;
+
+    @media (max-width: $mobile) {
+    justify-content: flex-start;
+    max-width: none;
+    }
+}
+
+&__tag {
+    &--primary       { @include tag($primary); }
+    &--secondary     { @include tag($secondary); }
+    &--tertiary      { @include tag($tertiary); }
+    &--primary-light { @include tag($primary-light); }
+}
+}

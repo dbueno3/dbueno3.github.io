@@ -1,0 +1,107 @@
+@use '../styles/variables' as *;
+
+.home {
+&__hero {
+    @include page-enter;
+    animation-delay: 100ms;
+}
+
+&__greeting {
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+&__cursor {
+    display: inline-block;
+    width: 3px;
+    height: 36px;
+    background: $primary;
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+&__bio {
+    font-size: 16px;
+    color: $text-muted;
+    line-height: 1.7;
+    max-width: 560px;
+}
+
+// ─── Featured Projects ───
+&__projects {
+    @include page-enter;
+    animation-delay: 220ms;
+    margin-top: 48px;
+}
+
+&__projects-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+&__projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+&__project-card {
+    @include card;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+&__project-info {
+    flex: 1;
+}
+
+&__project-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+&__project-desc {
+    font-size: 14px;
+    color: $text-muted;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+&__project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+&__tag {
+    &--primary   { @include tag($primary); }
+    &--secondary { @include tag($secondary); }
+    &--tertiary  { @include tag($tertiary); }
+    &--light     { @include tag($primary-light); }
+}
+
+&__project-link {
+    color: $text-muted;
+    flex-shrink: 0;
+    margin-top: 4px;
+    transition: color 0.2s;
+
+    &:hover {
+    color: $primary;
+    }
+}
+
+// ─── Spotify section ───
+&__spotify {
+    @include page-enter;
+    animation-delay: 340ms;
+}
+}

@@ -1,0 +1,86 @@
+@use '../styles/variables' as *;
+
+.navbar {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 100;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 16px 40px;
+background: $bg-nav;
+backdrop-filter: blur(20px);
+border-bottom: 1px solid $border;
+
+@media (max-width: $mobile) {
+    padding: 12px 16px;
+}
+
+&__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+}
+
+&__logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: $primary-light;
+    letter-spacing: -0.5px;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+    color: $primary;
+    }
+}
+
+&__links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+&__link {
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $text-muted;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+
+    &:hover {
+    color: $text;
+    }
+
+    &--active {
+    color: $text;
+    background: rgba($primary, 0.12);
+    border-color: $border;
+    }
+}
+
+&__divider {
+    width: 1px;
+    height: 20px;
+    background: $border;
+    margin: 0 4px;
+}
+
+&__theme-toggle {
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    color: $text-muted;
+    transition: color 0.2s;
+
+    &:hover {
+    color: $text;
+    }
+}
+}

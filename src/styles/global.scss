@@ -1,0 +1,107 @@
+@use 'variables' as *;
+
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+background: $bg;
+color: $text;
+font-family: $font-family;
+min-height: 100vh;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+button {
+font-family: inherit;
+border: none;
+background: none;
+cursor: pointer;
+color: inherit;
+}
+
+img {
+max-width: 100%;
+display: block;
+}
+
+// ─── App wrapper ───
+.app {
+position: relative;
+overflow: hidden;
+min-height: 100vh;
+}
+
+// ─── Ambient background glows ───
+.ambient-glow {
+position: fixed;
+border-radius: 50%;
+pointer-events: none;
+z-index: 0;
+
+&--top {
+    top: -30%;
+    right: -20%;
+    width: 60vw;
+    height: 60vh;
+    background: radial-gradient(ellipse, rgba($primary, 0.03) 0%, transparent 70%);
+}
+
+&--bottom {
+    bottom: -20%;
+    left: -15%;
+    width: 50vw;
+    height: 50vh;
+    background: radial-gradient(ellipse, rgba($tertiary, 0.025) 0%, transparent 70%);
+}
+}
+
+// ─── Main content area ───
+.main-content {
+max-width: 800px;
+margin: 0 auto;
+padding: 100px 24px 60px;
+position: relative;
+z-index: 1;
+
+@media (max-width: $mobile) {
+    padding: 80px 16px 40px;
+}
+}
+
+// ─── Section helpers ───
+.section-title {
+font-size: 28px;
+font-weight: 700;
+color: $text;
+margin-bottom: 4px;
+letter-spacing: -0.5px;
+}
+
+.section-sub {
+font-size: 15px;
+color: $text-muted;
+margin-bottom: 32px;
+}
+
+// ─── Stagger animation delays ───
+@for $i from 1 through 6 {
+.stagger-#{$i} {
+    @include page-enter;
+    animation-delay: #{$i * 120}ms;
+}
+}

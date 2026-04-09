@@ -1,0 +1,54 @@
+@use '../styles/variables' as *;
+
+.contact {
+&__header {
+    @include page-enter;
+    animation-delay: 100ms;
+}
+
+&__intro {
+    font-size: 15px;
+    color: $text-muted;
+    margin-bottom: 24px;
+}
+
+&__grid {
+    @include page-enter;
+    animation-delay: 220ms;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+
+    @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    }
+}
+
+&__card {
+    @include card;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+&__card-icon {
+    color: $text-muted;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+&__card:hover &__card-icon {
+    color: $primary;
+}
+
+&__card-label {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+&__card-value {
+    font-size: 13px;
+    color: $text-muted;
+}
+}
