@@ -6,6 +6,7 @@ import About from './pages/About';
 import Gear from './pages/Gear';
 import Contact from './pages/Contact';
 import LeetcodePlan from './pages/leetcodeplan';
+import Lifting from './pages/Lifting';
 import './styles/global.scss';
 
 const SECRET_HASH = '#dsa-x9k2';
@@ -44,6 +45,7 @@ export default function App() {
       case 'Gear':    return <Gear key={fadeKey} />;
       case 'Contact': return <Contact key={fadeKey} />;
       default:        return <Home key={fadeKey} />;
+      case 'Lifting': return <Lifting key={fadeKey} />;
     }
   };
 
