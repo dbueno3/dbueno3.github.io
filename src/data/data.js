@@ -9,7 +9,7 @@ import {
 export const TIMELINE = [
   {
     company: 'UBA America',
-    role: 'Support Engineer (Internal Tools & Automation)',
+    role: 'IT Help Desk Adminastrator (Internal Tools & Automation)',
     period: 'Oct 2024 - Now',
     description: 'Built and deployed a full-stack task management portal with React, Flask, SQL Server, Docker, and Azure, automating internal operations for 100+ monthly IT and Risk tasks',
     colorClass: 'primary',
@@ -72,7 +72,7 @@ export const SOCIALS = {
 
 export const CONTACT_LINKS = [
   { icon: MailIcon, label: 'Email', value: 'dbueno.nyc@gmail.com', url: 'mailto:dbueno.nyc@gmail.com' },
-  { icon: InstagramIcon, label: 'Instagram', value: '@daniel', url: 'https://instagram.com/daniel' },
+  { icon: InstagramIcon, label: 'Instagram', value: '@bueno.methodz', url: 'https://instagram.com/daniel' },
   { icon: LinkedInIcon, label: 'LinkedIn', value: 'in/dbueno3', url: 'https://linkedin.com/in/dbueno3' },
   { icon: GitHubIcon, label: 'GitHub', value: 'dbueno3', url: 'https://github.com/dbueno3' },
 ];

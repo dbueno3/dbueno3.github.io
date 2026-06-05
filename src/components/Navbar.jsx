@@ -1,6 +1,6 @@
 import './Navbar.scss';
 
-const PAGES = ['Home', 'About', 'Gear', 'Lifting', 'Contact'];
+const PAGES = ['Home', 'About', 'Lifting', 'Contact'];
 
 function SunIcon() {
 return (

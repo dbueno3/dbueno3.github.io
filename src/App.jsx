@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import Gear from './pages/Gear';
 import Contact from './pages/Contact';
 import LeetcodePlan from './pages/leetcodeplan';
 import Lifting from './pages/Lifting';
@@ -42,7 +41,6 @@ export default function App() {
     switch (page) {
       case 'Home':    return <Home key={fadeKey} />;
       case 'About':   return <About key={fadeKey} />;
-      case 'Gear':    return <Gear key={fadeKey} />;
       case 'Contact': return <Contact key={fadeKey} />;
       default:        return <Home key={fadeKey} />;
       case 'Lifting': return <Lifting key={fadeKey} />;
