@@ -17,6 +17,17 @@ export default function App() {
     typeof window !== 'undefined' && window.location.hash === SECRET_HASH
   );
 
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((t) => (t === 'dark' ? 'light' : 'dark'));
+
   
   useEffect(() => {
     const onHashChange = () => {
@@ -53,7 +64,7 @@ export default function App() {
       <div className="ambient-glow ambient-glow--top" />
       <div className="ambient-glow ambient-glow--bottom" />
 
-      <Navbar currentPage={page} onNavigate={navigate} />
+      <Navbar currentPage={page} onNavigate={navigate} theme={theme} onToggleTheme={toggleTheme} />
 
       <main className="main-content">
         {renderPage()}

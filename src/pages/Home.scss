@@ -18,7 +18,7 @@
     display: inline-block;
     width: 3px;
     height: 36px;
-    background: $primary;
+    background: var(--primary);
     margin-left: 4px;
     animation: blink 1s step-end infinite;
     vertical-align: text-bottom;
@@ -26,7 +26,7 @@
 
 &__bio {
     font-size: 16px;
-    color: $text-muted;
+    color: var(--text-muted);
     line-height: 1.7;
     max-width: 560px;
 }
@@ -70,7 +70,7 @@
 
 &__project-desc {
     font-size: 14px;
-    color: $text-muted;
+    color: var(--text-muted);
     line-height: 1.6;
     margin-bottom: 12px;
 }
@@ -82,21 +82,38 @@
 }
 
 &__tag {
-    &--primary   { @include tag($primary); }
-    &--secondary { @include tag($secondary); }
-    &--tertiary  { @include tag($tertiary); }
-    &--light     { @include tag($primary-light); }
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+
+    &--primary   { background: rgba($primary, 0.12);       color: var(--primary); }
+    &--secondary { background: rgba($secondary, 0.12);     color: var(--secondary); }
+    &--tertiary  { background: rgba($tertiary, 0.12);      color: var(--tertiary); }
+    &--light     { background: rgba($primary-light, 0.12); color: var(--primary-light); }
 }
 
 &__project-link {
-    color: $text-muted;
+    color: var(--text-muted);
     flex-shrink: 0;
     margin-top: 4px;
     transition: color 0.2s;
 
     &:hover {
-    color: $primary;
+    color: var(--primary);
     }
+}
+
+&__project-confidential {
+    flex-shrink: 0;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2px 8px;
+    white-space: nowrap;
 }
 
 // ─── Spotify section ───

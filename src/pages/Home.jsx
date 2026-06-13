@@ -15,8 +15,10 @@ return (
         <span className="home__cursor" />
         </h1>
         <p className="home__bio">
-        I'm a Support Engineer based in NYC with a CS degree from University at Buffalo.
-        I care about building things that actually work — whether that's software, internal tooling, or a solid deadlift.
+        I'm a developer based in NYC building internal tools and automation at UBA America —
+        full-stack portals, CI/CD pipelines, and everything in between.
+        CS grad from University at Buffalo. I care about building things that actually work,
+        whether that's software, tooling, or a solid deadlift.
         </p>
     </div>
 
@@ -37,9 +39,13 @@ return (
                 ))}
                 </div>
             </div>
-            <a href={project.link} className="home__project-link" target="_blank" rel="noopener noreferrer">
+            {project.link ? (
+              <a href={project.link} className="home__project-link" target="_blank" rel="noopener noreferrer">
                 <ExternalIcon />
-            </a>
+              </a>
+            ) : (
+              <span className="home__project-confidential">Confidential</span>
+            )}
             </div>
         ))}
         </div>

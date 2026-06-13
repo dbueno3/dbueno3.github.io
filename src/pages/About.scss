@@ -9,54 +9,44 @@
 // ─── Photo Collage ───
 &__collage {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     margin-bottom: 48px;
-    height: 200px;
+    height: 260px;
 
     @media (max-width: $mobile) {
     grid-template-columns: repeat(2, 1fr);
-    height: 280px;
+    height: 180px;
     }
 }
 
 &__collage-item {
     border-radius: 12px;
     border: 1px solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: $text-muted;
+    overflow: hidden;
     transition: transform 0.3s ease;
+
+    img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    }
 
     &:hover {
     transform: scale(1.03);
     }
 
     &--1 {
-    background: linear-gradient(135deg, rgba($primary, 0.08), rgba($primary, 0.18));
-    border-color: rgba($primary, 0.12);
-    transform: rotate(-3deg);
-    &:hover { transform: rotate(-3deg) scale(1.03); }
+    border-color: rgba($primary, 0.2);
+    transform: rotate(-2deg);
+    &:hover { transform: rotate(-2deg) scale(1.03); }
     }
     &--2 {
-    background: linear-gradient(135deg, rgba($secondary, 0.08), rgba($secondary, 0.18));
-    border-color: rgba($secondary, 0.12);
+    border-color: rgba($secondary, 0.2);
     transform: rotate(2deg);
     &:hover { transform: rotate(2deg) scale(1.03); }
-    }
-    &--3 {
-    background: linear-gradient(135deg, rgba($tertiary, 0.08), rgba($tertiary, 0.18));
-    border-color: rgba($tertiary, 0.12);
-    transform: rotate(-1deg);
-    &:hover { transform: rotate(-1deg) scale(1.03); }
-    }
-    &--4 {
-    background: linear-gradient(135deg, rgba($primary-light, 0.08), rgba($primary-light, 0.18));
-    border-color: rgba($primary-light, 0.12);
-    transform: rotate(3deg);
-    &:hover { transform: rotate(3deg) scale(1.03); }
     }
 }
 
@@ -106,10 +96,10 @@
     height: 12px;
     border-radius: 50%;
 
-    &--primary      { background: $primary;       box-shadow: 0 0 12px rgba($primary, 0.25); }
-    &--secondary    { background: $secondary;     box-shadow: 0 0 12px rgba($secondary, 0.25); }
-    &--tertiary     { background: $tertiary;      box-shadow: 0 0 12px rgba($tertiary, 0.25); }
-    &--primary-light { background: $primary-light; box-shadow: 0 0 12px rgba($primary-light, 0.25); }
+    &--primary       { background: var(--primary);       box-shadow: 0 0 12px rgba($primary, 0.25); }
+    &--secondary     { background: var(--secondary);     box-shadow: 0 0 12px rgba($secondary, 0.25); }
+    &--tertiary      { background: var(--tertiary);      box-shadow: 0 0 12px rgba($tertiary, 0.25); }
+    &--primary-light { background: var(--primary-light); box-shadow: 0 0 12px rgba($primary-light, 0.25); }
 }
 
 &__timeline-company {
@@ -122,30 +112,81 @@
     font-style: italic;
     margin-top: 2px;
 
-    &--primary       { color: $primary; }
-    &--secondary     { color: $secondary; }
-    &--tertiary      { color: $tertiary; }
-    &--primary-light { color: $primary-light; }
+    &--primary       { color: var(--primary); }
+    &--secondary     { color: var(--secondary); }
+    &--tertiary      { color: var(--tertiary); }
+    &--primary-light { color: var(--primary-light); }
 }
 
 &__timeline-desc {
     font-size: 14px;
-    color: $text-muted;
+    color: var(--text-muted);
     margin-top: 6px;
     line-height: 1.6;
 }
 
 &__timeline-period {
     font-size: 14px;
-    color: $text-muted;
+    color: var(--text-muted);
     white-space: nowrap;
     margin-left: 24px;
+}
+
+// ─── Skills ───
+&__skills {
+    @include page-enter;
+    animation-delay: 340ms;
+    margin-top: 48px;
+}
+
+&__skills-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+&__skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+
+    @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    }
+}
+
+&__skill-group {
+    @include card;
+}
+
+&__skill-category {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+&__skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+&__skill-tag {
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    background: rgba($text-muted, 0.12);
+    color: var(--text-muted);
 }
 
 // ─── Projects ───
 &__projects {
     @include page-enter;
-    animation-delay: 340ms;
+    animation-delay: 460ms;
     margin-top: 48px;
 }
 
@@ -184,7 +225,7 @@
 
 &__project-desc {
     font-size: 14px;
-    color: $text-muted;
+    color: var(--text-muted);
     line-height: 1.6;
 }
 
@@ -202,9 +243,14 @@
 }
 
 &__tag {
-    &--primary       { @include tag($primary); }
-    &--secondary     { @include tag($secondary); }
-    &--tertiary      { @include tag($tertiary); }
-    &--primary-light { @include tag($primary-light); }
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+
+    &--primary       { background: rgba($primary, 0.12);       color: var(--primary); }
+    &--secondary     { background: rgba($secondary, 0.12);     color: var(--secondary); }
+    &--tertiary      { background: rgba($tertiary, 0.12);      color: var(--tertiary); }
+    &--primary-light { background: rgba($primary-light, 0.12); color: var(--primary-light); }
 }
 }

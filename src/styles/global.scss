@@ -13,12 +13,13 @@ scroll-behavior: smooth;
 }
 
 body {
-background: $bg;
-color: $text;
+background: var(--bg);
+color: var(--text);
 font-family: $font-family;
 min-height: 100vh;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
+transition: background 0.25s ease, color 0.25s ease;
 }
 
 a {
@@ -87,14 +88,14 @@ z-index: 1;
 .section-title {
 font-size: 28px;
 font-weight: 700;
-color: $text;
+color: var(--text);
 margin-bottom: 4px;
 letter-spacing: -0.5px;
 }
 
 .section-sub {
 font-size: 15px;
-color: $text-muted;
+color: var(--text-muted);
 margin-bottom: 32px;
 }
 
